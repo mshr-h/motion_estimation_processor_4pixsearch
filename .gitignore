@@ -1,0 +1,17 @@
+*.vcd
+*.out
+
+docs/MU500-7SEG-IK
+docs/MU500-RX_SET01-IK
+
+fpga/db
+fpga/greybox_tmp
+fpga/incremental_db
+fpga/output_files
+fpga/simulation
+fpga/memory_sw_*.mif
+fpga/memory_tb_*.mif
+fpga/*.qws
+
+memory/memory_sw_*.txt
+memory/memory_tb_*.txt
