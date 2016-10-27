@@ -38,7 +38,6 @@ localparam VEC_WIDTH          = $clog2(SW_LENGTH+1);
 localparam MAX_SAD = 16'hFFFF;
 
 reg [1:0]  state_main;
-reg [11:0] cnt_min;
 reg [1:0]  state_addr_sw;
 reg [12:0] cnt_addr_sw;
 reg [1:0]  state_addr_tb;
@@ -269,32 +268,25 @@ end
 always @(posedge clk or negedge rst_n) begin
   if(~rst_n) begin
     min_sad  <= MAX_SAD;
-    cnt_min  <= 0;
     min_mvec <= 0;
   end else begin
     case(state_main)
       INIT:begin
         min_sad  <= MAX_SAD;
-        cnt_min  <= 0;
         min_mvec <= 0;
       end
       WAIT_REQ:begin
         min_sad  <= MAX_SAD;
-        cnt_min  <= 0;
         min_mvec <= 0;
       end
       RUNNING:begin
-        if(valid)begin
-          cnt_min <= cnt_min + 1;
-          if(min_sad > sad) begin
-            min_sad  <= sad;
-            min_mvec <= {cnt_y[4:0], cnt_x[4:0]};
-          end
+        if(valid && (min_sad > sad)) begin
+          min_sad  <= sad;
+          min_mvec <= {cnt_y[4:0], cnt_x[4:0]};
         end
       end
       WAIT_REQ_FALL : ;
       default:begin
-        cnt_min  <= 12'dx;
         min_sad  <= 16'dx;
         min_mvec <= 12'dx;
       end
