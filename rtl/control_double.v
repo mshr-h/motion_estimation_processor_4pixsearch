@@ -35,6 +35,8 @@ localparam CNT_PEARRAY_SW_END = SW_LENGTH**2+(SW_LENGTH-TB_LENGTH-1);
 localparam CNT_DUMMY_CYCLE    = SW_LENGTH-TB_LENGTH+7;
 localparam VEC_WIDTH          = $clog2(SW_LENGTH+1);
 
+localparam MAX_SAD = 16'hFFFF;
+
 reg [1:0]  state_main;
 reg [11:0] cnt_min;
 reg [1:0]  state_addr_sw;
@@ -266,19 +268,19 @@ end
 // min
 always @(posedge clk or negedge rst_n) begin
   if(~rst_n) begin
+    min_sad  <= MAX_SAD;
     cnt_min  <= 0;
-    min_sad  <= 16'hFFFF;
     min_mvec <= 0;
   end else begin
     case(state_main)
       INIT:begin
+        min_sad  <= MAX_SAD;
         cnt_min  <= 0;
-        min_sad  <= 16'hFFFF;
         min_mvec <= 0;
       end
       WAIT_REQ:begin
+        min_sad  <= MAX_SAD;
         cnt_min  <= 0;
-        min_sad  <= 16'hFFFF;
         min_mvec <= 0;
       end
       RUNNING:begin
