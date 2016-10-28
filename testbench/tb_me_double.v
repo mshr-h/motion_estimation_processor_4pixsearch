@@ -15,14 +15,14 @@
 
 module tb_me_double;
 
-parameter MEM_SW_A = "../memory/memory_sw_A.txt";
-parameter MEM_SW_B = "../memory/memory_sw_B.txt";
-parameter MEM_SW_C = "../memory/memory_sw_C.txt";
-parameter MEM_SW_D = "../memory/memory_sw_D.txt";
-parameter MEM_TB_A = "../memory/memory_tb_A.txt";
-parameter MEM_TB_B = "../memory/memory_tb_B.txt";
-parameter MEM_TB_C = "../memory/memory_tb_C.txt";
-parameter MEM_TB_D = "../memory/memory_tb_D.txt";
+localparam MEM_SW_A = "../memory/memory_sw_A.txt";
+localparam MEM_SW_B = "../memory/memory_sw_B.txt";
+localparam MEM_SW_C = "../memory/memory_sw_C.txt";
+localparam MEM_SW_D = "../memory/memory_sw_D.txt";
+localparam MEM_TB_A = "../memory/memory_tb_A.txt";
+localparam MEM_TB_B = "../memory/memory_tb_B.txt";
+localparam MEM_TB_C = "../memory/memory_tb_C.txt";
+localparam MEM_TB_D = "../memory/memory_tb_D.txt";
 
 reg         rst_n;
 reg         clk;

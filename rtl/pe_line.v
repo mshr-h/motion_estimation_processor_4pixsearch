@@ -1,8 +1,6 @@
 `default_nettype none
 module pe_line
-#(
-  parameter ARRAY_SIZE = 16
-) (
+(
   input  wire                    rst_n,
   input  wire                    clk,
   input  wire                    en_sw,
@@ -13,6 +11,8 @@ module pe_line
   output wire [7:0]              nxt_tb,
   output wire [ARRAY_SIZE*8-1:0] ad
 );
+
+parameter ARRAY_SIZE = 16;
 
 wire [7:0] tmp_sw [0:ARRAY_SIZE];
 wire [7:0] tmp_tb [0:ARRAY_SIZE];
