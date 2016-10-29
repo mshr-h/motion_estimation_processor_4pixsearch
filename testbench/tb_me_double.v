@@ -28,7 +28,8 @@ reg         rst_n;
 reg         clk;
 reg         req;
 wire [15:0] min_sad;
-wire [9:0]  min_mvec;
+wire [4:0]  min_mvec_h;
+wire [4:0]  min_mvec_w;
 wire        ack;
 wire [31:0] pel_sw;
 wire [31:0] pel_tb;
@@ -37,12 +38,12 @@ wire [5:0]  addr_tb;
 
 me_double _me_double
 (
-  .rst_n    ( rst_n    ) ,
-  .clk      ( clk      ) ,
-  .req      ( req      ) ,
-  .min_sad  ( min_sad  ) ,
-  .min_mvec ( min_mvec ) ,
-  .ack      ( ack      ) ,
+  .rst_n    ( rst_n                    ) ,
+  .clk      ( clk                      ) ,
+  .req      ( req                      ) ,
+  .min_sad  ( min_sad                  ) ,
+  .min_mvec ( {min_mvec_h, min_mvec_w} ) ,
+  .ack      ( ack                      ) ,
 
   // memory access ports
   .pel_sw   ( pel_sw   ) ,
@@ -100,8 +101,8 @@ initial begin
   req<=1;
   while(~ack) @(posedge clk);
   $display("motion vector");
-  $display("  h  : %d", min_mvec[9:5]);
-  $display("  w  : %d", min_mvec[4:0]);
+  $display("  h  : %d", min_mvec_h);
+  $display("  w  : %d", min_mvec_w);
   $display("  sad: %d", min_sad);
   repeat(10) @(posedge clk);
   req<=0;
