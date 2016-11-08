@@ -42,7 +42,7 @@ me_double _me_double
   .clk      ( clk                      ) ,
   .req      ( req                      ) ,
   .min_sad  ( min_sad                  ) ,
-  .min_mvec ( {min_mvec_h, min_mvec_w} ) ,
+  .min_mvec ( {min_mvec_w, min_mvec_h} ) ,
   .ack      ( ack                      ) ,
 
   // memory access ports

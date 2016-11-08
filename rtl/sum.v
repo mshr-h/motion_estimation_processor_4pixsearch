@@ -27,7 +27,7 @@ for (j = 0; j < 16; j = j + 1) begin : PIPELINE2
     if(~rst_n)
       preg2[j] <= 0;
     else
-      preg2[j] <= (preg1[j*4]+preg1[j*4+1])+(preg1[j*4+2]+preg1[j*4+3]);
+      preg2[j] <= #1 (preg1[j*4]+preg1[j*4+1])+(preg1[j*4+2]+preg1[j*4+3]);
   end
 end
 endgenerate
@@ -39,7 +39,7 @@ for (k = 0; k < 4; k = k + 1) begin : PIPELINE3
     if(~rst_n)
       preg3[k] <= 0;
     else
-      preg3[k] <= (preg2[k*4]+preg2[k*4+1])+(preg2[k*4+2]+preg2[k*4+3]);
+      preg3[k] <= #1 (preg2[k*4]+preg2[k*4+1])+(preg2[k*4+2]+preg2[k*4+3]);
   end
 end
 endgenerate
@@ -48,7 +48,7 @@ always @(posedge clk or negedge rst_n) begin
   if(~rst_n)
     sum <= 0;
   else
-    sum <= (preg3[0]+preg3[1])+(preg3[2]+preg3[3]);
+    sum <= #1 (preg3[0]+preg3[1])+(preg3[2]+preg3[3]);
 end
 
 endmodule

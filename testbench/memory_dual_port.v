@@ -25,15 +25,15 @@ end
 // write port
 always @(posedge clock) begin
   if(wren_a)
-    core[address_a] <= data_a;
+    core[address_a] <= #1 data_a;
   if(wren_b)
-    core[address_b] <= data_b;
+    core[address_b] <= #1 data_b;
 end
 
 // read port
 always @(posedge clock) begin
-  q_a <= core[address_a];
-  q_b <= core[address_b];
+  q_a <= #1 core[address_a];
+  q_b <= #1 core[address_b];
 end
 
 endmodule

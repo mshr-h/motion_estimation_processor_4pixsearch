@@ -12,7 +12,7 @@ module pe_line
   output wire [ARRAY_SIZE*8-1:0] ad
 );
 
-parameter ARRAY_SIZE = 16;
+parameter ARRAY_SIZE = 0;
 
 wire [7:0] tmp_sw [0:ARRAY_SIZE];
 wire [7:0] tmp_tb [0:ARRAY_SIZE];

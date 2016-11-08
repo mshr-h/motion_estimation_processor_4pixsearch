@@ -18,9 +18,9 @@ always @(posedge clk or negedge rst_n) begin
     nxt_tb <= 0;
   end else begin
     if(en_sw)
-      nxt_sw <= pel_sw;
+      nxt_sw <= #1 pel_sw;
     if(en_tb)
-      nxt_tb <= pel_tb;
+      nxt_tb <= #1 pel_tb;
   end
 end
 

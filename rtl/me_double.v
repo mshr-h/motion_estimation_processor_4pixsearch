@@ -4,7 +4,7 @@ module me_double
   input  wire        clk,
   input  wire        req,
   output wire [15:0] min_sad,
-  output wire [9:0]  min_mvec,
+  output wire [9:0]  min_mvec, // {w, h}
   output wire        ack,
 
   // memory access ports

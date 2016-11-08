@@ -83,12 +83,18 @@ defparam memory_dual_port_D.DWIDTH = 8;
 defparam memory_dual_port_D.AWIDTH = 10;
 defparam memory_dual_port_D.CONTENT = MEM_SW_D;
 
+reg [1:0] sel;
+
+always @(posedge clk) begin
+  sel <= #1 {addr_b[6], addr_b[0]};
+end
+
 always @(*) begin
-  case ({addr_b[6], addr_b[0]})
-    2'b00:   data_b <= data_b_A;
-    2'b01:   data_b <= data_b_B;
-    2'b10:   data_b <= data_b_C;
-    2'b11:   data_b <= data_b_D;
+  case (sel)
+    2'b00:   data_b <= #1 data_b_A;
+    2'b01:   data_b <= #1 data_b_B;
+    2'b10:   data_b <= #1 data_b_C;
+    2'b11:   data_b <= #1 data_b_D;
     default: data_b <= 8'dx;
   endcase
 end
