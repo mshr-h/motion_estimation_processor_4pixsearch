@@ -1,0 +1,77 @@
+[*]
+[*] GTKWave Analyzer v3.3.71 (w)1999-2016 BSI
+[*] Wed Nov 09 07:39:05 2016
+[*]
+[dumpfile] "C:\Users\admin\Dropbox\Documents\_working\research\motion_estimation_processor_proposed\testbench\tb_me_integer.vcd"
+[dumpfile_mtime] "Wed Nov 09 07:39:00 2016"
+[dumpfile_size] 385707
+[savefile] "C:\Users\admin\Dropbox\Documents\_working\research\motion_estimation_processor_proposed\testbench\tb_me_integer.gtkw"
+[timestart] 3401
+[size] 1280 971
+[pos] -1 -1
+*-6.000000 3468 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_me_integer.
+[treeopen] tb_me_integer._me_integer.
+[treeopen] tb_me_integer._me_integer._SAD_array.
+[sst_width] 197
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 283
+@200
+-top
+@28
+tb_me_integer.rst_n
+tb_me_integer.clk
+tb_me_integer.req
+tb_me_integer.ack
+@24
+tb_me_integer.init_pos_h[5:0]
+tb_me_integer.init_pos_w[5:0]
+tb_me_integer.addr_sw_h[5:0]
+tb_me_integer.addr_sw_w[5:0]
+tb_me_integer.pel_sw[7:0]
+tb_me_integer.addr_tb[7:0]
+tb_me_integer.pel_tb[7:0]
+@28
+tb_me_integer.min_diff_h[1:0]
+tb_me_integer.min_diff_w[1:0]
+@24
+tb_me_integer.min_sad[15:0]
+@200
+-control_integer
+@28
+tb_me_integer._me_integer._control_integer.clr
+tb_me_integer._me_integer._control_integer.done
+@24
+tb_me_integer._me_integer._control_integer.cnt_h[6:0]
+tb_me_integer._me_integer._control_integer.cnt_w[6:0]
+@28
+tb_me_integer._me_integer._control_integer.en_addr_sw
+tb_me_integer._me_integer._control_integer.en_addr_tb
+tb_me_integer._me_integer._control_integer.en_sadarray_sw
+tb_me_integer._me_integer._control_integer.en_sadarray_tb
+@24
+tb_me_integer._me_integer._control_integer.min_sad[15:0]
+@28
+tb_me_integer._me_integer._control_integer.min_diff[3:0]
+@22
+tb_me_integer._me_integer._control_integer.sad[15:0]
+@28
+tb_me_integer._me_integer._control_integer.vec_diff[3:0]
+@200
+-SAD_array
+@24
+tb_me_integer._me_integer._SAD_array.sad_A[15:0]
+tb_me_integer._me_integer._SAD_array.sad_B[15:0]
+tb_me_integer._me_integer._SAD_array.sad_C[15:0]
+tb_me_integer._me_integer._SAD_array.sad_D[15:0]
+tb_me_integer._me_integer._SAD_array.sad_E[15:0]
+tb_me_integer._me_integer._SAD_array.sad_F[15:0]
+tb_me_integer._me_integer._SAD_array.sad_G[15:0]
+tb_me_integer._me_integer._SAD_array.sad_H[15:0]
+tb_me_integer._me_integer._SAD_array.sad_I[15:0]
+tb_me_integer._me_integer._SAD_array.sad[15:0]
+@28
+tb_me_integer._me_integer._SAD_array.vec_diff[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
