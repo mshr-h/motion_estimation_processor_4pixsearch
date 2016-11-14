@@ -1,0 +1,129 @@
+[*]
+[*] GTKWave Analyzer v3.3.71 (w)1999-2016 BSI
+[*] Mon Nov 14 06:13:07 2016
+[*]
+[dumpfile] "C:\Users\admin\Dropbox\Documents\_working\research\motion_estimation_processor_proposed\testbench\tb_me_top.vcd"
+[dumpfile_mtime] "Mon Nov 14 06:11:22 2016"
+[dumpfile_size] 4013115
+[savefile] "C:\Users\admin\Dropbox\Documents\_working\research\motion_estimation_processor_proposed\testbench\tb_me_top.gtkw"
+[timestart] 10162
+[size] 1280 971
+[pos] -1 -1
+*-10.000000 14243 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_me_top.
+[treeopen] tb_me_top._me_top.
+[treeopen] tb_me_top._me_top._control_top.
+[sst_width] 197
+[signals_width] 208
+[sst_expanded] 1
+[sst_vpaned_height] 283
+@200
+-testbench
+@28
+tb_me_top.rst_n
+tb_me_top.clk
+tb_me_top.req
+tb_me_top.ack
+@24
+tb_me_top.addr_sw_d[9:0]
+@22
+tb_me_top.pel_sw_d[31:0]
+tb_me_top.addr_sw_i[11:0]
+@24
+tb_me_top.pel_sw_i[7:0]
+tb_me_top.addr_tb_d[5:0]
+@22
+tb_me_top.pel_tb_d[31:0]
+@24
+tb_me_top.addr_tb_i[7:0]
+tb_me_top.pel_tb_i[7:0]
+tb_me_top.min_mvec_h[5:0]
+tb_me_top.min_mvec_w[5:0]
+tb_me_top.min_sad[15:0]
+@200
+-top module
+@28
+tb_me_top._me_top.clk
+tb_me_top._me_top.req
+tb_me_top._me_top.req_d
+tb_me_top._me_top.ack_d
+tb_me_top._me_top.req_i
+tb_me_top._me_top.ack_i
+tb_me_top._me_top.ack
+@22
+tb_me_top._me_top.min_mvec_d[9:0]
+tb_me_top._me_top.init_pos_i[11:0]
+@24
+tb_me_top._me_top.min_sad_i[15:0]
+@28
+tb_me_top._me_top.min_diff_i[3:0]
+@22
+tb_me_top._me_top.min_mvec[11:0]
+@24
+tb_me_top._me_top.min_sad[15:0]
+@200
+-control_top
+@28
+tb_me_top._me_top._control_top.clk
+tb_me_top._me_top._control_top.req
+tb_me_top._me_top._control_top.ack
+@24
+tb_me_top._me_top._control_top.state_main[3:0]
+@28
+tb_me_top._me_top._control_top.req_d
+tb_me_top._me_top._control_top.ack_d
+@22
+tb_me_top._me_top._control_top.min_mvec_d[9:0]
+tb_me_top._me_top._control_top.mvec_d[9:0]
+@28
+tb_me_top._me_top._control_top.req_i
+@c00022
+tb_me_top._me_top._control_top.init_pos_i[11:0]
+@28
+(0)tb_me_top._me_top._control_top.init_pos_i[11:0]
+(1)tb_me_top._me_top._control_top.init_pos_i[11:0]
+(2)tb_me_top._me_top._control_top.init_pos_i[11:0]
+(3)tb_me_top._me_top._control_top.init_pos_i[11:0]
+(4)tb_me_top._me_top._control_top.init_pos_i[11:0]
+(5)tb_me_top._me_top._control_top.init_pos_i[11:0]
+@1401200
+-group_end
+@28
+tb_me_top._me_top._control_top.ack_i
+@29
+tb_me_top._me_top._control_top.min_diff_i[3:0]
+@24
+tb_me_top._me_top._control_top.min_sad_i[15:0]
+@22
+tb_me_top._me_top._control_top.mvec[11:0]
+tb_me_top._me_top._control_top.min_mvec[11:0]
+@24
+tb_me_top._me_top._control_top.min_sad[15:0]
+@200
+-me_double
+@28
+tb_me_top._me_top._me_double.clk
+tb_me_top._me_top._me_double.req
+tb_me_top._me_top._me_double.ack
+tb_me_top._me_top._me_double.clr
+tb_me_top._me_top._me_double.en_addr_sw
+@24
+tb_me_top._me_top._me_double.addr_sw[9:0]
+@22
+tb_me_top._me_top._me_double.pel_sw[31:0]
+@28
+tb_me_top._me_top._me_double.en_addr_tb
+@22
+tb_me_top._me_top._me_double.addr_tb[5:0]
+tb_me_top._me_top._me_double.pel_tb[31:0]
+@28
+tb_me_top._me_top._me_double.en_paarray_sw
+tb_me_top._me_top._me_double.en_paarray_tb
+@24
+tb_me_top._me_top._me_double.sad[15:0]
+@22
+tb_me_top._me_top._me_double.min_mvec[9:0]
+@24
+tb_me_top._me_top._me_double.min_sad[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

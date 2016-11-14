@@ -27,5 +27,7 @@ end
 assign ad = (nxt_sw > nxt_tb) ? nxt_sw - nxt_tb
                               : nxt_tb - nxt_sw;
 
+// proposed method
+
 endmodule
 `default_nettype wire

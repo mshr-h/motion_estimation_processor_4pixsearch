@@ -46,8 +46,8 @@ reg [3:0]  state_pearray_sw;
 reg [12:0] cnt_pearray_sw;
 reg [3:0]  state_valid;
 reg [10:0] cnt_dummy;
-reg [5:0]  cnt_x;
-reg [5:0]  cnt_y;
+reg [5:0]  cnt_w;
+reg [5:0]  cnt_h;
 reg [3:0]  state_done;
 reg        cnt_done;
 
@@ -56,7 +56,7 @@ assign clr           = (state_main == WAIT_REQ);
 assign en_addr_sw    = (cnt_addr_sw != 0);
 assign en_addr_tb    = (cnt_addr_tb != 0);
 assign en_paarray_sw = (cnt_pearray_sw != 0);
-wire   valid         = (cnt_x > (TB_LENGTH-2)) && (cnt_y > (TB_LENGTH-2));
+wire   valid         = (cnt_w > (TB_LENGTH-2)) && (cnt_h > (TB_LENGTH-2));
 wire   done          = (state_done == DONE_ACTIVE);
 
 // FSM main
@@ -185,8 +185,8 @@ always @(posedge clk or negedge rst_n) begin
   if (~rst_n) begin
     state_valid <= INIT;
     cnt_dummy   <= 0;
-    cnt_x       <= 0;
-    cnt_y       <= 0;
+    cnt_w       <= 0;
+    cnt_h       <= 0;
   end else begin
     case(state_valid)
       INIT: begin
@@ -204,28 +204,28 @@ always @(posedge clk or negedge rst_n) begin
         cnt_dummy <= #1 cnt_dummy + 1;
       end
       ACTIVE: begin
-        if((cnt_x==(SW_LENGTH-1))&&(cnt_y==(SW_LENGTH-1)))
+        if((cnt_w==(SW_LENGTH-1))&&(cnt_h==(SW_LENGTH-1)))
           state_valid <= #1 DONE;
         cnt_dummy <= #1 0;
-        if(cnt_y < (SW_LENGTH-1))
-          cnt_y <= #1 cnt_y + 1;
+        if(cnt_h < (SW_LENGTH-1))
+          cnt_h <= #1 cnt_h + 1;
         else begin
-          cnt_y <= #1 0;
-          cnt_x <= #1 cnt_x + 1;
+          cnt_h <= #1 0;
+          cnt_w <= #1 cnt_w + 1;
         end
       end
       DONE: begin
         if(state_main==WAIT_REQ_FALL)
           state_valid <= #1 WAIT_RUN;
         cnt_dummy <= #1 0;
-        cnt_x     <= #1 0;
-        cnt_y     <= #1 0;
+        cnt_w     <= #1 0;
+        cnt_h     <= #1 0;
       end
       default: begin
         state_valid <= 'dx;
         cnt_dummy   <= 'dx;
-        cnt_x       <= 'dx;
-        cnt_y       <= 'dx;
+        cnt_w       <= 'dx;
+        cnt_h       <= 'dx;
       end
     endcase
   end
@@ -243,7 +243,7 @@ always @(posedge clk or negedge rst_n) begin
         cnt_done   <= #1 0;
       end
       WAIT_SRCH_END: begin
-        if(cnt_x==SW_LENGTH)
+        if(cnt_w==SW_LENGTH)
           state_done <= #1 DONE_CNT;
         cnt_done <= #1 0;
       end
@@ -282,7 +282,7 @@ always @(posedge clk or negedge rst_n) begin
       RUNNING: begin
         if(valid && (min_sad > sad)) begin
           min_sad  <= #1 sad;
-          min_mvec <= #1 {cnt_y[4:0], cnt_x[4:0]};
+          min_mvec <= #1 {cnt_w[4:0], cnt_h[4:0]};
         end
       end
       WAIT_REQ_FALL: ;

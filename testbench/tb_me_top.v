@@ -114,7 +114,7 @@ initial begin
   rst_n<=1;
   repeat(3) @(posedge clk);
   req<=1;
-  repeat(1500) @(posedge clk); // while(~ack) @(posedge clk);
+  while(~ack) @(posedge clk);
   $display("motion vector");
   $display("  h  : %d", min_mvec_h);
   $display("  w  : %d", min_mvec_w);
