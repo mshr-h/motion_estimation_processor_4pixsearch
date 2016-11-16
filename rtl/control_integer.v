@@ -32,6 +32,8 @@ localparam WAIT_SW_DONE    = 4'b1000;
 localparam WAIT_DUMMY      = 4'b1001;
 localparam UPDATE_MIN      = 4'b1010;
 
+localparam MAX_SAD = 16'hFFFF;
+
 reg [3:0] state_main;
 assign ack        = (state_main==WAIT_REQ_FALL);
 assign clr        = (state_main==WAIT_REQ);
@@ -95,7 +97,7 @@ always @(posedge clk or negedge rst_n) begin
     case(state_addr_tb)
       INIT: begin
         state_addr_tb <= #1 WAIT_RUN;
-        en_addr_tb <= #1 0;
+        en_addr_tb    <= #1 0;
       end
       WAIT_RUN: begin
         if(state_main==RUNNING)
@@ -174,30 +176,30 @@ end
 
 // min_sad, min_diff
 reg [3:0] state_done;
-reg [2:0] cnt_done;
+reg [1:0] cnt_done;
 always @(posedge clk or negedge rst_n) begin
   if(~rst_n) begin
     state_done <= INIT;
     cnt_done   <= 0;
-    min_sad    <= 16'hFFFF;
+    min_sad    <= MAX_SAD;
     min_diff   <= 4'b0000;
   end else begin
     case (state_done)
       INIT: begin
         state_done <= #1 WAIT_SW_DONE;
         cnt_done   <= #1 0;
-        min_sad    <= #1 16'hFFFF;
+        min_sad    <= #1 MAX_SAD;
         min_diff   <= #1 4'b0000;
       end
       WAIT_SW_DONE: begin
         if(state_addr_sw==DONE)
           state_done <= #1 WAIT_DUMMY;
         cnt_done   <= #1 0;
-        min_sad    <= #1 16'hFFFF;
+        min_sad    <= #1 MAX_SAD;
         min_diff   <= #1 4'b0000;
       end
       WAIT_DUMMY: begin
-        if(cnt_done==3'd2)
+        if(cnt_done==2'd2)
           state_done <= #1 UPDATE_MIN;
         cnt_done <= #1 cnt_done + 1;
       end

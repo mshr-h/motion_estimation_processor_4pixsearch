@@ -44,20 +44,13 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 always @(posedge clk or negedge rst_n) begin
-  if(~rst_n)
-    addr_tb <= 0;
-  else if(clr)
-    addr_tb <= #1 0;
-  else if(en_tb)
-    addr_tb <= #1 addr_tb + 1;
+  if(~rst_n)     addr_tb <= 0;
+  else if(clr)   addr_tb <= #1 0;
+  else if(en_tb) addr_tb <= #1 addr_tb + 1;
 end
 
-always @(posedge clk or negedge rst_n) begin
-  if(~rst_n)
-    en_sw_pre <= 0;
-  else
-    en_sw_pre <= #1 en_sw;
-end
+always @(posedge clk)
+  en_sw_pre <= #1 en_sw;
 
 endmodule
 

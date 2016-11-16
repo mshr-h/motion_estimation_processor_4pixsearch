@@ -59,12 +59,12 @@ always @(posedge clk or negedge rst_n) begin
       INIT: begin
         state_main <= #1 WAIT_REQ;
         mvec_d     <= #1 0;
-        init_pos_i <= 0;
-        diff_i     <= 0;
-        mvec       <= 0;
-        min_mvec   <= 0;
-        min_sad    <= 0;
-        ack        <= 0;
+        init_pos_i <= #1 0;
+        diff_i     <= #1 0;
+        mvec       <= #1 0;
+        min_mvec   <= #1 0;
+        min_sad    <= #1 0;
+        ack        <= #1 0;
       end
       WAIT_REQ: begin
         if(req)
@@ -115,7 +115,7 @@ always @(posedge clk or negedge rst_n) begin
       WAIT_REQ_FALL: begin
         if(~req) begin
           state_main <= #1 WAIT_REQ;
-          ack <= #1 0;
+          ack        <= #1 0;
         end
       end
       default: begin
@@ -129,32 +129,32 @@ function [5:0] decode_mvec;
   input [4:0] mvec_in;
   begin
     case(mvec_in)
-      5'd7   : decode_mvec=6'd0;
-      5'd8   : decode_mvec=6'd1;
-      5'd9   : decode_mvec=6'd3;
-      5'd10  : decode_mvec=6'd5;
-      5'd11  : decode_mvec=6'd7;
-      5'd12  : decode_mvec=6'd9;
-      5'd13  : decode_mvec=6'd11;
-      5'd14  : decode_mvec=6'd13;
-      5'd15  : decode_mvec=6'd15;
-      5'd16  : decode_mvec=6'd17;
-      5'd17  : decode_mvec=6'd19;
-      5'd18  : decode_mvec=6'd21;
-      5'd19  : decode_mvec=6'd23;
-      5'd20  : decode_mvec=6'd25;
-      5'd21  : decode_mvec=6'd27;
-      5'd22  : decode_mvec=6'd29;
-      5'd23  : decode_mvec=6'd31;
-      5'd24  : decode_mvec=6'd33;
-      5'd25  : decode_mvec=6'd35;
-      5'd26  : decode_mvec=6'd37;
-      5'd27  : decode_mvec=6'd39;
-      5'd28  : decode_mvec=6'd41;
-      5'd29  : decode_mvec=6'd43;
-      5'd30  : decode_mvec=6'd45;
-      5'd31  : decode_mvec=6'd46;
-      default: decode_mvec=6'dx;
+      5'd7   : decode_mvec = 6'd0;
+      5'd8   : decode_mvec = 6'd1;
+      5'd9   : decode_mvec = 6'd3;
+      5'd10  : decode_mvec = 6'd5;
+      5'd11  : decode_mvec = 6'd7;
+      5'd12  : decode_mvec = 6'd9;
+      5'd13  : decode_mvec = 6'd11;
+      5'd14  : decode_mvec = 6'd13;
+      5'd15  : decode_mvec = 6'd15;
+      5'd16  : decode_mvec = 6'd17;
+      5'd17  : decode_mvec = 6'd19;
+      5'd18  : decode_mvec = 6'd21;
+      5'd19  : decode_mvec = 6'd23;
+      5'd20  : decode_mvec = 6'd25;
+      5'd21  : decode_mvec = 6'd27;
+      5'd22  : decode_mvec = 6'd29;
+      5'd23  : decode_mvec = 6'd31;
+      5'd24  : decode_mvec = 6'd33;
+      5'd25  : decode_mvec = 6'd35;
+      5'd26  : decode_mvec = 6'd37;
+      5'd27  : decode_mvec = 6'd39;
+      5'd28  : decode_mvec = 6'd41;
+      5'd29  : decode_mvec = 6'd43;
+      5'd30  : decode_mvec = 6'd45;
+      5'd31  : decode_mvec = 6'd46;
+      default: decode_mvec = 6'dx;
     endcase
   end
 endfunction
