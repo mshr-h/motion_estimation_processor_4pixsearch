@@ -83,14 +83,10 @@ always @(posedge clk or negedge rst_n) begin
         mvec_d     <= #1 min_mvec_d;
         req_d      <= #1 0;
       end
-      CALC_INIT_MVEC: begin // not completed yet
-        if(1) begin
-          state_main       <= #1 START_ME_INTEGER;
-          // init_pos_i[11:6] <= #1 21;
-          // init_pos_i[5:0]  <= #1 43;
-          init_pos_i[11:6] <= #1 decode_mvec(mvec_d[9:5]);
-          init_pos_i[5:0]  <= #1 decode_mvec(mvec_d[4:0]);
-        end
+      CALC_INIT_MVEC: begin
+        state_main       <= #1 START_ME_INTEGER;
+        init_pos_i[11:6] <= #1 decode_mvec(mvec_d[9:5]);
+        init_pos_i[5:0]  <= #1 decode_mvec(mvec_d[4:0]);
       end
       START_ME_INTEGER: begin
         state_main <= #1 WAIT_ME_INTEGER;
@@ -107,8 +103,10 @@ always @(posedge clk or negedge rst_n) begin
       end
       CALC_MVEC: begin // not completed yet
         state_main <= #1 DONE;
-        mvec[11:6] <= #1 {{mvec_d[9:5], 1'b1} + {{4{diff_i[3]}}, diff_i[3:2]}};
-        mvec[5:0]  <= #1 {{mvec_d[4:0], 1'b1} + {{4{diff_i[1]}}, diff_i[1:0]}};
+        // mvec[11:6] <= #1 {{mvec_d[9:5], 1'b1} + {{4{diff_i[3]}}, diff_i[3:2]}};
+        // mvec[5:0]  <= #1 {{mvec_d[4:0], 1'b1} + {{4{diff_i[1]}}, diff_i[1:0]}};
+        mvec[11:6] <= #1 init_pos_i[11:6] + {4'd0, diff_i[3:2]};
+        mvec[5:0]  <= #1 init_pos_i[5:0] + {4'd0, diff_i[1:0]};
       end
       DONE: begin
         state_main <= #1 WAIT_REQ_FALL;
