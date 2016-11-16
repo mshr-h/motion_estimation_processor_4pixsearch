@@ -103,8 +103,6 @@ always @(posedge clk or negedge rst_n) begin
       end
       CALC_MVEC: begin // not completed yet
         state_main <= #1 DONE;
-        // mvec[11:6] <= #1 {{mvec_d[9:5], 1'b1} + {{4{diff_i[3]}}, diff_i[3:2]}};
-        // mvec[5:0]  <= #1 {{mvec_d[4:0], 1'b1} + {{4{diff_i[1]}}, diff_i[1:0]}};
         mvec[11:6] <= #1 init_pos_i[11:6] + {4'd0, diff_i[3:2]};
         mvec[5:0]  <= #1 init_pos_i[5:0] + {4'd0, diff_i[1:0]};
       end
