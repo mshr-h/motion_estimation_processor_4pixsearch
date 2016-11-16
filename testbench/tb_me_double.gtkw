@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.71 (w)1999-2016 BSI
-[*] Tue Nov 08 08:23:51 2016
+[*] Wed Nov 16 03:24:22 2016
 [*]
 [dumpfile] "C:\Users\admin\Dropbox\Documents\_working\research\motion_estimation_processor_proposed\testbench\tb_me_double.vcd"
-[dumpfile_mtime] "Tue Nov 08 08:23:48 2016"
-[dumpfile_size] 3568406
+[dumpfile_mtime] "Wed Nov 16 03:23:23 2016"
+[dumpfile_size] 3715538
 [savefile] "C:\Users\admin\Dropbox\Documents\_working\research\motion_estimation_processor_proposed\testbench\tb_me_double.gtkw"
-[timestart] 0
+[timestart] 6415
 [size] 1280 971
-[pos] -1471 -191
-*-6.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-10.000000 10782 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_me_double.
 [sst_width] 197
 [signals_width] 150
@@ -24,12 +24,15 @@ tb_me_double.req
 tb_me_double.ack
 @24
 tb_me_double.addr_sw[9:0]
+@22
+tb_me_double.pel_sw[31:0]
+@24
 tb_me_double.addr_tb[5:0]
+@22
+tb_me_double.pel_tb[31:0]
+@24
 tb_me_double.min_mvec_h[4:0]
 tb_me_double.min_mvec_w[4:0]
 tb_me_double.min_sad[15:0]
-@22
-tb_me_double.pel_sw[31:0]
-tb_me_double.pel_tb[31:0]
 [pattern_trace] 1
 [pattern_trace] 0

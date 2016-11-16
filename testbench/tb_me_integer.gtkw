@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.71 (w)1999-2016 BSI
-[*] Wed Nov 09 07:39:05 2016
+[*] Wed Nov 16 03:24:35 2016
 [*]
 [dumpfile] "C:\Users\admin\Dropbox\Documents\_working\research\motion_estimation_processor_proposed\testbench\tb_me_integer.vcd"
-[dumpfile_mtime] "Wed Nov 09 07:39:00 2016"
-[dumpfile_size] 385707
+[dumpfile_mtime] "Wed Nov 16 03:23:23 2016"
+[dumpfile_size] 417888
 [savefile] "C:\Users\admin\Dropbox\Documents\_working\research\motion_estimation_processor_proposed\testbench\tb_me_integer.gtkw"
-[timestart] 3401
+[timestart] 0
 [size] 1280 971
 [pos] -1 -1
-*-6.000000 3468 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-10.000000 3514 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_me_integer.
 [treeopen] tb_me_integer._me_integer.
 [treeopen] tb_me_integer._me_integer._SAD_array.
