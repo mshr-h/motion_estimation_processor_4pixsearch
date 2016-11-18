@@ -172,15 +172,6 @@ SAD SAD_A
 
 // --------------------------------------------
 // minimum detector {w, h}
-// localparam VEC_DIFF_A = 4'b1111;
-// localparam VEC_DIFF_B = 4'b1100;
-// localparam VEC_DIFF_C = 4'b1101;
-// localparam VEC_DIFF_D = 4'b0011;
-// localparam VEC_DIFF_E = 4'b0000;
-// localparam VEC_DIFF_F = 4'b0001;
-// localparam VEC_DIFF_G = 4'b0111;
-// localparam VEC_DIFF_H = 4'b0100;
-// localparam VEC_DIFF_I = 4'b0101;
 localparam VEC_DIFF_A = 4'b0000;
 localparam VEC_DIFF_B = 4'b0001;
 localparam VEC_DIFF_C = 4'b0010;
