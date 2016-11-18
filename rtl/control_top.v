@@ -35,7 +35,7 @@ localparam DONE             = 4'd10;
 localparam WAIT_REQ_FALL    = 4'd11;
 
 reg [3:0]  state_main;
-reg [9:0] mvec_d;
+reg [9:0]  mvec_d;
 reg [3:0]  diff_i;
 reg [11:0] mvec;
 
