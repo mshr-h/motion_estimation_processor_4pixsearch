@@ -15,7 +15,7 @@ for (i = 0; i < 64; i = i + 1) begin : PIPELINE1
     if(~rst_n)
       preg1[i] <= 0;
     else
-      preg1[i] <= ad[(i+1)*8-1:i*8];
+      preg1[i] <= ad[i*8+:8];
   end
 end
 endgenerate

@@ -44,7 +44,7 @@ endgenerate
 // pack AD
 generate
 for (i=0; i<ARRAY_SIZE; i=i+1) begin: PACK
-  assign ad[8*(i+1)-1:8*i] = w_ad[i];
+  assign ad[i*8+:8] = w_ad[i];
 end
 endgenerate
 

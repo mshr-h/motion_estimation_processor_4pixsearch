@@ -56,7 +56,7 @@ endgenerate
 // pack w_ad
 generate
 for (i = 0; i < TB_LENGTH; i = i + 1) begin :PACK
-  assign packed_ad[(i+1)*8*TB_LENGTH-1:i*8*TB_LENGTH] = w_ad[i];
+  assign packed_ad[i*8*TB_LENGTH+:8*TB_LENGTH] = w_ad[i];
 end
 endgenerate
 
