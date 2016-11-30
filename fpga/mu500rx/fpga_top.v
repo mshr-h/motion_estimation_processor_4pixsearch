@@ -16,14 +16,14 @@ module fpga_top
   output wire [8:0] SEG_SEL_IK
 );
 
-localparam MEM_SW_A = "./memory_sw_A.mif";
-localparam MEM_SW_B = "./memory_sw_B.mif";
-localparam MEM_SW_C = "./memory_sw_C.mif";
-localparam MEM_SW_D = "./memory_sw_D.mif";
-localparam MEM_TB_A = "./memory_tb_A.mif";
-localparam MEM_TB_B = "./memory_tb_B.mif";
-localparam MEM_TB_C = "./memory_tb_C.mif";
-localparam MEM_TB_D = "./memory_tb_D.mif";
+localparam MEM_SW_A = "../memory_sw_A.mif";
+localparam MEM_SW_B = "../memory_sw_B.mif";
+localparam MEM_SW_C = "../memory_sw_C.mif";
+localparam MEM_SW_D = "../memory_sw_D.mif";
+localparam MEM_TB_A = "../memory_tb_A.mif";
+localparam MEM_TB_B = "../memory_tb_B.mif";
+localparam MEM_TB_C = "../memory_tb_C.mif";
+localparam MEM_TB_D = "../memory_tb_D.mif";
 
 reg         req;
 wire [15:0] min_sad;
@@ -133,8 +133,8 @@ _displayIK_7seg_16
   .data5   ( min_mvec   ),
   .data6   ( 0          ),
   .data7   ( 0          ),
-  .data8   ( pel_sw_i   ),
-  .data9   ( pel_tb_i   ),
+  .data8   ( 0          ),
+  .data9   ( 0          ),
   .data10  ( 0          ),
   .data11  ( 0          ),
   .data12  ( 0          ),
