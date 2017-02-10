@@ -54,3 +54,7 @@ tools/      tool for creating mif file
 
 ![](docs/block_diagram.png)
 
+## References
+
+1. [A study on fast motion estimation algorithm](http://ieeexplore.ieee.org/document/7800438/)
+
