@@ -16,7 +16,7 @@ It's currently under development.
 - [Icarus Verilog(>=10.0)](http://iverilog.wikia.com/wiki/Installation_Guide)
 - [Altera Quartus Prime(>=16.0)](https://www.altera.co.jp/downloads/download-center.html)
 - Excel 2013
-- [Python 2.7](https://www.python.org/downloads/)
+- [Golang](https://golang.org/)
 
 ## How to run Simulation
 
